@@ -31,7 +31,7 @@ class Plant(models.Model):
 CARE_TYPE = (("W", "Water"), ("F", "Food"), ("T", "Talk"))
 
 class Care(models.Model): 
-    date = models.DateField
+    date = models.DateField("CARE DATE")
     care_type = models.CharField(
         max_length = 1,  
         choices = CARE_TYPE, 
@@ -41,4 +41,7 @@ class Care(models.Model):
 
     def __str__(self):
         return f"{self.get_care_display()} on {self.date}"
+    
+    class Meta: 
+        ordering = ["-date"]
     
