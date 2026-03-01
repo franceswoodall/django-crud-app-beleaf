@@ -14,7 +14,7 @@ def home(request):
 
 class PlantCreate(CreateView):
     model = Plant
-    fields = ['name', 'size', 'notes', 'categories']
+    fields = ['name', 'size', 'notes'] #'categories' commented out while none are available
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
