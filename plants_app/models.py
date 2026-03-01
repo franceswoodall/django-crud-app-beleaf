@@ -22,7 +22,7 @@ class Plant(models.Model):
         default = SIZES[0][0], 
     )
     notes = models.TextField(blank=True, default='')
-    categories = models.ManyToManyField(Category)
+    # categories = models.ManyToManyField(Category)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
