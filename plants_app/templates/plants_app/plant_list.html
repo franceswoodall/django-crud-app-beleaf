@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/plants/plant-list.css' %}" />
+{% endblock %} {% block content %}
+
+<section class="page-header">
+    <h1>Plant List</h1>
+</section>
+
+<section class="plant-container">
+    {% for plant in plant_list %}
+        <div class="plant-card">
+            <h3>{{ plant.name }}</h3>
+            <p>Size: {{plant.size }}</p>
+            <p>{{ plant.notes }}</p>
+        </div>
+    {% empty %}
+        <p>No plants added yet</p>
+    {% endfor %}
+</section>
+
+{% endblock %}

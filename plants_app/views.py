@@ -12,6 +12,10 @@ from .models import Plant
 def home(request): 
     return render(request, 'home.html')
 
+class PlantList(ListView):
+    model = Plant
+    
+
 class PlantCreate(CreateView):
     model = Plant
     fields = ['name', 'size', 'notes'] #'categories' commented out while none are available
