@@ -14,13 +14,15 @@ def home(request):
 
 class PlantList(ListView):
     model = Plant
-    
+
 
 class PlantCreate(CreateView):
     model = Plant
     fields = ['name', 'size', 'notes'] #'categories' commented out while none are available
-    success_url = reverse_lazy('home')
+    
 
     def form_valid(self, form):
         return super().form_valid(form)
 
+class PlantDetail(DetailView):
+    model = Plant

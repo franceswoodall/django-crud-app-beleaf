@@ -28,6 +28,9 @@ class Plant(models.Model):
     def __str__(self):
         return self.name 
     
+    def get_absolute_url(self):
+        return reverse('plant-detail', kwargs={'pk': self.id})
+    
 CARE_TYPE = (("W", "Water"), ("F", "Food"), ("T", "Talk"))
 
 class Care(models.Model): 
