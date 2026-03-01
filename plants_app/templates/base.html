@@ -4,15 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The GreenHouse</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <title>Beleaf</title>
+    {% block head %}
+    {% endblock %}
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="">All Plants</a></li>
-            <li><a href="">All Plants</a></li>
-            <li><a href="">All Plants</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="header-logo-container">
+            <a href="/">
+                <img src="" alt="Beleaf Logo" />
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">All Plants</a></li>
+                <li><a href="">All Plants</a></li>
+                <li><a href="">All Plants</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>
