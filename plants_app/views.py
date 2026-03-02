@@ -27,3 +27,12 @@ class PlantCreate(CreateView):
 
 class PlantDetail(DetailView):
     model = Plant
+
+class PlantUpdate(UpdateView):
+    model = Plant
+    fields = ['name', 'size', 'notes']
+
+class PlantDelete(DeleteView):
+    model = Plant
+    success_url = '/plants/'
+
