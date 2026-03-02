@@ -10,5 +10,6 @@ urlpatterns = [
     path('plants/<int:pk>/delete/', views.PlantDelete.as_view(), name='plant-delete'), 
     path('plants/<int:pk>/add-care/',
          views.add_care,
-         name='add-care')
+         name='add-care'), 
+    path('categories/', views.CategoryList.as_view(), name='category-list'), 
 ]

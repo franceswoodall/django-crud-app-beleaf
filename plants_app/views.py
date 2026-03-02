@@ -7,7 +7,7 @@ from .forms import CareForm
 
 from django.http import HttpResponse
 
-from .models import Plant
+from .models import Plant, Care, Category
 
 # Create your views here.
 
@@ -49,4 +49,7 @@ def add_care(request, pk):
         new_care.plant_id = pk
         new_care.save()
     return redirect('plant-detail', pk=pk)
+
+class CategoryList(ListView): 
+    model = Category
 

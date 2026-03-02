@@ -5,6 +5,7 @@
     <div class="plant-details">
         <h1>{{ plant.name }}</h1>
         <h2>{{ plant.size }}</h2>
+        <h2>{{ plant.category }}</h2>
         <h3>{{ plant.notes }}</h3>  
         <div class="plant-actions">
             <a href="{% url 'plant-update' plant.id%}" class="btn warn">Edit</a>
