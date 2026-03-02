@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Category Detail Page</h1>
+
+<p>{{ category.get_name_display }}</p>
+
+<h2>Here are the plants that belong to {{ category.name }}</h2>
+<ul>
+    {% for category in category.plant_set.all %}
+    <li>
+        <a href="{% url 'plant-detail' plant.id %}">
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2>Plants without a cateory</h2>
+{% if plants_without_category.count %}
+<ul>
+  {% for plants in plants_without_category %}
+  <li>
+    <a href="{% url 'plant-detail' plant.id %}">{{plant.name}}</a>
+  </li>
+  <form action="{% url 'associate-plant' category.id plant.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Add to Category</button>
+  </form>
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no plants without a category!</p>
+{% endif %} {% endblock %}

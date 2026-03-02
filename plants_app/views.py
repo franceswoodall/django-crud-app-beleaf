@@ -20,7 +20,7 @@ class PlantList(ListView):
 
 class PlantCreate(CreateView):
     model = Plant
-    fields = ['name', 'size', 'notes'] #'categories' commented out while none are available
+    fields = ['name', 'size', 'notes', 'categories'] 
     
     def form_valid(self, form):
         form.instance.user = self.request.user 
@@ -36,7 +36,7 @@ class PlantDetail(DetailView):
 
 class PlantUpdate(UpdateView):
     model = Plant
-    fields = ['name', 'size', 'notes']
+    fields = ['name', 'size', 'notes', 'categories']
 
 class PlantDelete(DeleteView):
     model = Plant
