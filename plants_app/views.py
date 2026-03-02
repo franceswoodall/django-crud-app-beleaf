@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserCreationForm 
 
 from django.http import HttpResponse
 
@@ -20,8 +21,8 @@ class PlantCreate(CreateView):
     model = Plant
     fields = ['name', 'size', 'notes'] #'categories' commented out while none are available
     
-
     def form_valid(self, form):
+        form.instance.user = self.request.user 
         return super().form_valid(form)
 
 class PlantDetail(DetailView):
