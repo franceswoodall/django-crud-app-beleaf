@@ -1,17 +1,17 @@
 from django import forms
-from .models import Plant, Care
+from .models import Care
 
 class CareForm(forms.ModelForm): 
     class Meta: 
         model = Care 
         fields = ['date', 'care_type']
 
-        widgets= {
+        widgets = {
             'date': forms.DateInput(
+                format=('%Y-%m-%d'),
                 attrs={
-                    'type': 'text', 
-                    'placeholder': 'YYYY-MM-DD', 
-                    'class': 'datepicker'
+                    'placeholder': 'Select a date',
+                    'type': 'date'
                 }
-            )
+            ),
         }
