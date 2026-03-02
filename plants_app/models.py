@@ -10,9 +10,19 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name 
-    
 
-SIZES = (("S", "Small"), ("M", "Medium"), ("L", "Large"))
+    
+CARE_TYPE = (
+    ("W", "Water"), 
+    ("F", "Food"), 
+    ("T", "Talk")
+    )
+
+SIZES = (
+    ("S", "Small"), 
+    ("M", "Medium"), 
+    ("L", "Large")
+    )
 
 class Plant(models.Model): 
     name = models.CharField(max_length=100)
@@ -30,20 +40,18 @@ class Plant(models.Model):
     
     def get_absolute_url(self):
         return reverse('plant-detail', kwargs={'pk': self.id})
-    
-CARE_TYPE = (("W", "Water"), ("F", "Food"), ("T", "Talk"))
 
 class Care(models.Model): 
     date = models.DateField("CARE DATE")
     care_type = models.CharField(
         max_length = 1,  
         choices = CARE_TYPE, 
-        default = CARE_TYPE[0][0], 
+        default = CARE_TYPE[0][0]
     )
     plant = models.ForeignKey(Plant, on_delete = models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_care_display()} on {self.date}"
+        return f"{self.get_care_type_display()} on {self.date}"
     
     class Meta: 
         ordering = ["-date"]

@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm 
+from .forms import CareForm
 
 from django.http import HttpResponse
 
@@ -28,6 +29,11 @@ class PlantCreate(CreateView):
 class PlantDetail(DetailView):
     model = Plant
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['care_form'] = CareForm()
+        return context 
+
 class PlantUpdate(UpdateView):
     model = Plant
     fields = ['name', 'size', 'notes']
@@ -35,4 +41,12 @@ class PlantUpdate(UpdateView):
 class PlantDelete(DeleteView):
     model = Plant
     success_url = '/plants/'
+
+def add_care(request, pk):
+    form = CareForm(request.POST)
+    if form.is_valid(): 
+        new_care = form.save(commit = False)
+        new_care.plant_id = pk
+        new_care.save()
+    return redirect('plant-detail', pk=pk)
 

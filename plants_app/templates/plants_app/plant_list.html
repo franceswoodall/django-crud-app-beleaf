@@ -9,12 +9,16 @@
 <section class="plant-container">
     {% for plant in plant_list %}
         <div class="plant-card">
-            <h3>{{ plant.name }}</h3>
-            <p>Size: {{plant.size }}</p>
-            <p>{{ plant.notes }}</p>
+            <a href="{% url 'plant-detail' plant.id %}">
+                <div class="card-content"></div>
+                    <h3>{{ plant.name }}</h3>
+                    <p>Size: {{plant.size }}</p>
+                    <p>{{ plant.notes }}</p>
+                </div>
+            </a>
         </div>
     {% empty %}
-        <p>No plants added yet</p>
+        <p>No plants added yet <a href="{% url 'plant-create' %}">Add Plant</a></p>
     {% endfor %}
 </section>
 
