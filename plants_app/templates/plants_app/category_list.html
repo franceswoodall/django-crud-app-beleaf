@@ -1,10 +1,12 @@
 {% extends "base.html" %} {% block content %}
 
 <h1>Category list</h1>
+<p>Missing a category?</p>
+  <a href="{% url 'category-create' %}">Add Category</a>
 <ul>
   {% for category in category_list %}
   <li>
-    <a href="{% url 'category-list' %}">{{ category.name }}</a>
+    <a href="{% url 'category-detail' category.id %}">{{ category.name }}</a>
   </li>
   {% endfor %}
 </ul>

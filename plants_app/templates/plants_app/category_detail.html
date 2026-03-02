@@ -3,7 +3,8 @@
 
 <p>{{ category.get_name_display }}</p>
 
-<h2>Here are the plants that belong to {{ category.name }}</h2>
+<h2>{{ category.name }}</h2>
+<h2>{{ category.description }}</h2>
 <ul>
     {% for category in category.plant_set.all %}
     <li>
