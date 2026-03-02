@@ -53,3 +53,9 @@ def add_care(request, pk):
 class CategoryList(ListView): 
     model = Category
 
+class CategoryCreate(CreateView): 
+    model = Category 
+    fields = ['name', 'description']
+
+class CategoryDetail(DetailView):
+    model = Category

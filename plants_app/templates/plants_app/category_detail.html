@@ -7,7 +7,7 @@
 <ul>
     {% for category in category.plant_set.all %}
     <li>
-        <a href="{% url 'plant-detail' plant.id %}">
+        <a href="{% url 'category-detail' plant.id %}">
         </a>
     </li>
     {% endfor %}

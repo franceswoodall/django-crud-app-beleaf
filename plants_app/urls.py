@@ -12,4 +12,6 @@ urlpatterns = [
          views.add_care,
          name='add-care'), 
     path('categories/', views.CategoryList.as_view(), name='category-list'), 
+    path('categories/create/', views.CategoryCreate.as_view(), name='category-create'), 
+    path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='category-detail')
 ]
