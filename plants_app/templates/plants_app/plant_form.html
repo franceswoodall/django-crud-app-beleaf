@@ -3,11 +3,11 @@
 {% endblock %}{% block content %}
 
 <div class="page-header">
-    <!-- {% if plant %}
-    <h1>Edit {{ plant.name }} </h1>
-    {% else %} -->
-    <h1>Add a Plant</h1>
-    <!-- {% endif %} -->
+    {% if plant %}
+        <h1>Edit {{ plant.name }} </h1>
+    {% else %}
+        <h1>Add a Plant</h1>
+    {% endif %}
     <img src="" alt=""/>
 </div>
 
