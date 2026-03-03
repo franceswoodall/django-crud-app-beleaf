@@ -1,8 +1,9 @@
-from django.urls import path 
+from django.urls import path, include 
+from django.contrib import admin
 from .import views 
 
 urlpatterns = [
-    path('', views.home, name='home'), 
+    path('', views.Home.as_view(), name='home'), 
     path('plants/', views.PlantList.as_view(), name='plant-list'), 
     path('plants/create/', views.PlantCreate.as_view(), name='plant-create'), 
     path('plants/<int:pk>/', views.PlantDetail.as_view(), name='plant-detail'), 
@@ -16,6 +17,7 @@ urlpatterns = [
     path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='category-detail'), 
     path('category/<int:pk>/edit/', views.CategoryUpdate.as_view(), name='category-update'),
     path('category/<int:pk>/delete/', views.CategoryDelete.as_view(), name='category-delete'), 
-
+    path('admin/', admin.site.urls), 
+    path('accounts/', include('django.contrib.auth.urls')), 
 
 ]

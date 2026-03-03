@@ -18,9 +18,13 @@
         </div>
         <nav>
             <ul>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'plant-list' %}">All Plants</a></li>
                 <li><a href="{% url 'plant-create' %}">Add Plant</a></li>
                 <li><a href="{% url 'category-list' %}">All Categories</a></li>
+                {% else %}
+                <li><a href="{% url 'home' %}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

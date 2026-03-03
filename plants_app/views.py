@@ -1,18 +1,15 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm 
+from django.contrib.auth.views import LoginView
 from .forms import CareForm
-
-from django.http import HttpResponse
-
-from .models import Plant, Care, Category
+from .models import Plant, Category
 
 # Create your views here.
 
-def home(request): 
-    return render(request, 'home.html')
+class Home(LoginView): 
+   template_name = 'home.html'
 
 class PlantList(ListView):
     model = Plant
