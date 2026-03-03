@@ -3,7 +3,7 @@
     <div class="subsection-title">
         <h2>Categories</h2>
     </div>
-
+<!-- START FROM HERE! -->
 <form action="{% url 'add-care' plant.id %}" method="post" class="subsection-content">
     {% csrf_token %}
     {{ care_form.as_p }}

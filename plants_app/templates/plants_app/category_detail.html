@@ -6,27 +6,17 @@
 <h2>{{ category.name }}</h2>
 <h2>{{ category.description }}</h2>
 <ul>
-    {% for category in category.plant_set.all %}
+    {% for plant in category.plant_set.all %}
     <li>
-        <a href="{% url 'category-detail' plant.id %}">
+        <a href="{% url 'plant-detail' plant.id %}">
+          {{ plant.name }}
         </a>
     </li>
+    {% empty %}
+    <li>No plants in this category!</li>
     {% endfor %}
 </ul>
 
-<h2>Plants without a cateory</h2>
-{% if plants_without_category.count %}
-<ul>
-  {% for plants in plants_without_category %}
-  <li>
-    <a href="{% url 'plant-detail' plant.id %}">{{plant.name}}</a>
-  </li>
-  <form action="{% url 'associate-plant' category.id plant.id %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Add to Category</button>
-  </form>
-  {% endfor %}
-</ul>
-{% else %}
-<p>There are no plants without a category!</p>
-{% endif %} {% endblock %}
+{% endblock %}
+
+
