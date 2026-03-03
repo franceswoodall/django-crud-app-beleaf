@@ -43,6 +43,12 @@ class Plant(models.Model):
     notes = models.TextField(blank=True, default='')
     categories = models.ManyToManyField(Category)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    image_url = models.URLField(
+        'Plant Image URL', 
+        max_length = 500, 
+        blank = True, 
+        null = True 
+    )
 
     def __str__(self):
         return self.name 

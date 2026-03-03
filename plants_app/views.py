@@ -4,6 +4,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CareForm
 from .models import Plant, Category
 
@@ -12,19 +14,18 @@ from .models import Plant, Category
 class Home(LoginView): 
    template_name = 'home.html'
 
-class PlantList(ListView):
+class PlantList(LoginRequiredMixin, ListView):
     model = Plant
 
-
-class PlantCreate(CreateView):
+class PlantCreate(LoginRequiredMixin, CreateView):
     model = Plant
-    fields = ['name', 'size', 'notes', 'categories'] 
+    fields = ['name', 'size', 'notes', 'categories', 'image_url'] 
     
     def form_valid(self, form):
         form.instance.user = self.request.user 
         return super().form_valid(form)
 
-class PlantDetail(DetailView):
+class PlantDetail(LoginRequiredMixin, DetailView):
     model = Plant
 
     def get_context_data(self, **kwargs):
@@ -32,14 +33,15 @@ class PlantDetail(DetailView):
         context['care_form'] = CareForm()
         return context 
 
-class PlantUpdate(UpdateView):
+class PlantUpdate(LoginRequiredMixin, UpdateView):
     model = Plant
-    fields = ['name', 'size', 'notes', 'categories']
+    fields = ['name', 'size', 'notes', 'categories', 'image_url'] 
 
-class PlantDelete(DeleteView):
+class PlantDelete(LoginRequiredMixin, DeleteView):
     model = Plant
     success_url = '/plants/'
 
+@login_required
 def add_care(request, pk):
     form = CareForm(request.POST)
     if form.is_valid(): 
@@ -48,21 +50,21 @@ def add_care(request, pk):
         new_care.save()
     return redirect('plant-detail', pk=pk)
 
-class CategoryList(ListView): 
+class CategoryList(LoginRequiredMixin, ListView): 
     model = Category
 
-class CategoryCreate(CreateView): 
+class CategoryCreate(LoginRequiredMixin, CreateView): 
     model = Category 
     fields = ['name', 'description']
 
-class CategoryDetail(DetailView):
+class CategoryDetail(LoginRequiredMixin, DetailView):
     model = Category
 
-class CategoryUpdate(UpdateView): 
+class CategoryUpdate(LoginRequiredMixin, UpdateView): 
     model = Category
     fields = ['name', 'description']
 
-class CategoryDelete(DeleteView):
+class CategoryDelete(LoginRequiredMixin, DeleteView):
     model = Category
     success_url = '/categories/'
 
