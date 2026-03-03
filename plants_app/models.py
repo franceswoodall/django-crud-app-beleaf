@@ -21,6 +21,12 @@ CARE_TYPE = (
     ("T", "Talk")
     )
 
+TIMES = (
+    ('AM', 'Morning'), 
+    ('PM', 'Afternoon'), 
+    ('N', 'Night'), 
+)
+
 SIZES = (
     ("S", "Small"), 
     ("M", "Medium"), 
@@ -51,10 +57,17 @@ class Care(models.Model):
         choices = CARE_TYPE, 
         default = CARE_TYPE[0][0]
     )
+    time_of_day = models.CharField(
+        max_length = 2, 
+        choices = TIMES, 
+        blank = True, 
+        null = True 
+    )
     plant = models.ForeignKey(Plant, on_delete = models.CASCADE)
 
     def __str__(self):
-        return f"{self.get_care_type_display()} on {self.date}"
+        time_str = f"{self.get_time_of_day_display()})" if self.time_of_day else ""
+        return f"{self.get_care_type_display()}{time_str} on {self.date}"
     
     class Meta: 
         ordering = ["-date"]
