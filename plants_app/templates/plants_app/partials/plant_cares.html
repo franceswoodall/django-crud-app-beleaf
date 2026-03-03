@@ -18,6 +18,7 @@
             <tr>
                 <th>Date</th>
                 <th>Care Type</th>
+                <th>Time of Day</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,10 @@
             <tr>
                 <td>{{ care.date }}</td>
                 <td>{{ care.get_care_type_display }}</td>
+                <td>{% if care.time_of_day %}
+                        ({{ care.get_time_of_day_display }})
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>

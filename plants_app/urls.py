@@ -13,5 +13,9 @@ urlpatterns = [
          name='add-care'), 
     path('categories/', views.CategoryList.as_view(), name='category-list'), 
     path('categories/create/', views.CategoryCreate.as_view(), name='category-create'), 
-    path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='category-detail')
+    path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='category-detail'), 
+    path('category/<int:pk>/edit/', views.CategoryUpdate.as_view(), name='category-update'),
+    path('category/<int:pk>/delete/', views.CategoryDelete.as_view(), name='category-delete'), 
+
+
 ]

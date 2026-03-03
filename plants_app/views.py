@@ -59,3 +59,11 @@ class CategoryCreate(CreateView):
 
 class CategoryDetail(DetailView):
     model = Category
+
+class CategoryUpdate(UpdateView): 
+    model = Category
+    fields = ['name', 'description']
+
+class CategoryDelete(DeleteView):
+    model = Category
+    success_url = '/categories/'

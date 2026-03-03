@@ -5,7 +5,7 @@ from datetime import date
 class CareForm(forms.ModelForm): 
     class Meta: 
         model = Care 
-        fields = ['date', 'care_type']
+        fields = ['date', 'care_type', 'time_of_day']
 
         widgets = {
             'date': forms.DateInput(
@@ -13,7 +13,7 @@ class CareForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'Select a date',
                     'type': 'date', 
-                    'value': date.today
+                    'value': date.today()
                 }
             ),
         }
