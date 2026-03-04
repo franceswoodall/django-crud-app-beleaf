@@ -1,13 +1,29 @@
+.form-header {
+    width: 100%; 
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
 .form-wrapper {
-    max-width: 500px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 95%; 
+    max-width: 900px; 
     margin: 0 auto;
-    padding-top: 2rem;
+    padding-top: 0.5rem; 
+}
+
+.form-container {
+    width: 100%; 
 }
 
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    gap: 2.5rem; 
+    gap: 0.8rem 1.5rem; 
+    width: 100%; 
     justify-items: center; 
     text-align: center; 
 }
@@ -22,14 +38,14 @@
     flex-direction: column;
     align-items: center; 
     width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 .field-container label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.85rem;
     color: #ffffff; 
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.3rem;
     width: 100%; 
     text-align: center; 
 }
@@ -40,18 +56,28 @@
     background: rgba(255, 255, 255, 0.05); 
     border: 0.5px solid #ffffff; 
     border-radius: 4px;
-    padding: 1.2rem;
+    padding: 0.6rem 1.2rem; 
     color: #ffffff; 
     font-family: 'Figtree', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     outline: none;
     width: 100%;
+    height: 40px; 
     text-align: center; 
 }
 
+.field-container select {
+    height: 40px; 
+    font-size: 0.9rem;
+    padding: 0 1rem; 
+}
+
 textarea {
-    min-height: 100px;
-    resize: none;
+    min-height: 120px;
+    padding: 1rem;
+    font-size: 0.95rem;
+    text-align: left;
+    line-height: 1.5; 
 }
 
 .submit-btn {
