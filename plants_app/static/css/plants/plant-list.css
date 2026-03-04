@@ -1,0 +1,56 @@
+.plant-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 350px));
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.plant-card {
+    flex-direction: column; 
+    display: flex; 
+    border: 0.5px solid rgba(129, 169, 105, 0.3); 
+    border-radius: 15px; 
+    border-bottom: 0.5px solid rgba(129, 169, 105, 0.4);
+    padding-bottom: 2.5rem;
+}
+
+.plant-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.plant-card h3 {
+    font-size: 1.8rem;
+    font-weight: 300; 
+    letter-spacing: 2px;
+    color: #f0f4ef;
+    margin-bottom: 1.2rem;
+}
+
+.plant-size {
+    font-size: 1.2rem;
+    color: #81a969;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+}
+
+.plant-notes {
+    font-weight: 300;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.brand-accent {
+    color: #81a969;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}

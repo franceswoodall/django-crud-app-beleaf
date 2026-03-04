@@ -1,25 +1,32 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/plants/plant-list.css' %}" />
-{% endblock %} {% block content %}
+{% endblock %} 
 
-<section class="page-header">
-    <h1>Plant List</h1>
-</section>
+{% block content %}
+<div class="plants-wrapper">
+    <section class="page-header">
+        <h1>Your Plant Collection</h1>
+    </section>
 
-<section class="plant-container">
-    {% for plant in plant_list %}
-        <div class="plant-card">
-            <a href="{% url 'plant-detail' plant.id %}">
-                <div class="card-content"></div>
-                    <h3>{{ plant.name }}</h3>
-                    <p>Size: {{plant.size }}</p>
-                    <p>{{ plant.notes }}</p>
-                </div>
-            </a>
-        </div>
-    {% empty %}
-        <p>No plants added yet <a href="{% url 'plant-create' %}">Add Plant</a></p>
-    {% endfor %}
-</section>
+
+    <section class="plant-container">
+        {% for plant in plant_list %}
+            <div class="plant-card">
+                <a href="{% url 'plant-detail' plant.id %}">
+                    <div class="card-content">
+                        <h3>{{ plant.name }}</h3>
+                        <p>Size: {{plant.size }}</p>
+                        <p>{{ plant.notes }}</p>
+                    </div>
+                </a>
+            </div>
+        {% empty %}
+            <div class="empty-collection">
+                <p>No plants added yet</p> 
+                <a href="{% url 'plant-create' %}" class="btn-minimal">Add Plant</a>
+            </div>
+        {% endfor %}
+    </section>
+</div>
 
 {% endblock %}
