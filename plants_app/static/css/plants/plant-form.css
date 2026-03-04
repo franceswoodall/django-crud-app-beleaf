@@ -1,0 +1,76 @@
+.form-wrapper {
+    max-width: 500px; 
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2.5rem; 
+    justify-items: center; 
+    text-align: center; 
+}
+
+.full-width {
+    grid-column: span 2;
+    width: 100%; 
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+.field-container label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #ffffff; 
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    width: 100%; 
+    text-align: center; 
+}
+
+.field-container input, 
+.field-container textarea,
+.field-container select {
+    background: rgba(255, 255, 255, 0.05); 
+    border: 0.5px solid #ffffff; 
+    border-radius: 4px;
+    padding: 1.2rem;
+    color: #ffffff; 
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.5rem;
+    outline: none;
+    width: 100%;
+    text-align: center; 
+}
+
+textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+.submit-btn {
+    grid-column: span 2; 
+    width: 100%; 
+    box-sizing: border-box; 
+    background-color: transparent;
+    color: #ffffff; 
+    border: 1px solid #ffffff;
+    padding: 1.4rem;
+    width: 100%; 
+    border-radius: 2px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.submit-btn:hover {
+    background: #ffffff;
+    color: #314528;
+}

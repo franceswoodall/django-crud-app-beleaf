@@ -46,7 +46,6 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  transition: color 0.3s;
 }
 
 .main-nav a:hover {
