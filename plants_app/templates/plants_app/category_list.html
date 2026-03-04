@@ -3,19 +3,20 @@
 {% endblock %} 
 
 {% block content %}
-<div class="plants-wrapper"></div>
+<div class="plants-wrapper">
   <header class="page-header">
-      <h1>Plant Categories</h1>
+    <h1>Plant Categories</h1>
   </header>
 
   <section class="plant-container">
     {% for category in category_list %}
-      <div class="plant-card">
-        <a href="{% url 'category-detail' category.id %}">
-          <div class="card-content">
-            <h3>{{ category.name }}</h3>
-          </div>      
-      </div>
+    <div class="plant-card">
+      <a href="{% url 'category-detail' category.id %}">
+        <div class="card-content">
+          <h3>{{ category.name }}</h3>
+        </div>  
+      </a>    
+    </div>
     {% empty %}
       <div class="empty-collection">
         <p>No categories added yet.</p> 

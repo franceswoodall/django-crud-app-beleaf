@@ -65,3 +65,29 @@ body {
   padding: 2rem 0;
 }
 
+.submit-btn, 
+.btn-primary, 
+.login-btn, 
+.btn-minimal {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none; 
+  width: 100%;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 0.8rem; 
+  border-radius: 2px; 
+  font-size: 1rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.submit-btn:hover, 
+.btn-primary:hover, 
+.login-btn:hover, 
+.btn-minimal:hover {
+  background: #ffffff;
+  color: #314528; 
+}

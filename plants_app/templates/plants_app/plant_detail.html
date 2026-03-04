@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{% static 'css/plants/plant-detail.css' %}" />
 
 <section class="plant-container">
-    <div class="plant-image-container">
+    <div class="detail-wrapper">
         {% if plant.image_url %}
             <img src="{{ plant.image_url }}" alt="{{ plant.name }}" class="plant-user-image">
         {% else %}

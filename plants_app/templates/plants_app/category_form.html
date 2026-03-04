@@ -1,22 +1,31 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<link rel="stylesheet" href="{% static 'css/form.css' %}" />
-{% endblock %}{% block content %}
+<link rel="stylesheet" href="{% static 'css/plants/plant-form.css' %}" />
+{% endblock %}
 
-<div class="page-header">
-    {% if category %}
+{% block content %}
+<div class="form-wrapper">
+    <header class="form-header">
+        {% if category %}
         <h1>Edit {{ category.name }} </h1>
     {% else %}
         <h1>Add a Category</h1>
     {% endif %}
-    <img src="" alt=""/>
+    </header>
 </div>
 
-<form action="" method="post" class="form-container">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <button type="submit" class="btn submit">Submit</button>
-</form>
+    <form action="" method="post" class="form-container">
+        {% csrf_token %}
+        <div class="form-grid">
+            {% for field in form %}
+                <div class="field-container full-width">
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
 
 {% endblock %}
