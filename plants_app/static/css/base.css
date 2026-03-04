@@ -1,60 +1,56 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-html, body {
+* {
   margin: 0;
   padding: 0;
-  height: 100%; 
   box-sizing: border-box;
 }
 
-
 body {
-  background-color: #314528;
-  color: #f0f4ef;
+  background-image: url('../images/canva-background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #314528; 
   font-family: 'Figtree', sans-serif;
-  border: 35px solid #81a969;
+  color: #f0f4ef;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-
 .main-header {
-  background-color: #314528;
-  border-bottom: 1px solid rgba(129, 169, 105, 0.3); 
-  padding: 15px 30px;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem 4rem; 
 }
 
 .main-nav ul {
   display: flex;
   list-style: none;
-  gap: 30px; 
-  margin: 0; 
-  padding: 0; 
-  align-items: center
-}
-
-.main-nav li {
-  display: inline; 
+  gap: 30px;
 }
 
 .main-nav a, 
 #logout-form button {
-  color: #81a969;
+  color: #81a969; 
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 400;
   background: none;
   border: none;
   cursor: pointer;
 }
-
 .content-area {
   flex: 1;
-  padding: 40px;
+  padding: 60px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
