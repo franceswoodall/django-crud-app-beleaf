@@ -1,17 +1,15 @@
 {% load static %}
-<section class="cares">
-    <div class="subsection-title">
-        <h2>Plant Care</h2>
-    </div>
+<section class="cares-container">
     <h2>Show your plant some love</h2>
 
-<form action="{% url 'add-care' plant.id %}" method="post" class="subsection-content">
+<form action="{% url 'add-care' plant.id %}" method="post" class="care-form-container">
     {% csrf_token %}
-    {{ care_form.as_p }}
-    <button type="submit" class="btn submit">Give Care</button>
+    <div class="form-fields">
+        {{ form.as_p }}
+    </div>
+    <button type="submit" class="submit btn">Give Care</button>
 </form>
 
-    <h2>Recorded Care</h2>
     {% if plant.care_set.all %}
     <table>
         <thead>

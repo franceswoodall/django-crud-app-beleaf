@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="{% static 'css/plants/plant-detail.css' %}" />
 
 <section class="plant-container">
-    <div class="detail-wrapper">
+        <div class="detail-image">
         {% if plant.image_url %}
-            <img src="{{ plant.image_url }}" alt="{{ plant.name }}" class="plant-user-image">
+            <img src="{{ plant.image_url }}" alt="{{ plant.name }}">
         {% else %}
-            <img src="{% static 'images/default-plant.png' %}" alt="generic plant placeholder" class="plant-user-image">
+            <img src="{% static 'images/default-plant.png' %}" alt="generic plant placeholder">
         {% endif %}
-    </div>
+        </div>
 
     <div class="plant-details">
         <h1>{{ plant.name }}</h1>
@@ -16,8 +16,10 @@
         <h2>{% for category in plant.categories.all %}
             {{ category.name }}
             {% endfor %}
+        </h2>
         <h3>{{ plant.notes }}</h3>  
-        <div class="plant-actions">
+
+        <div class="action-links">
             <a href="{% url 'plant-update' plant.id%}" class="btn warn">Edit</a>
             <a href="{% url 'plant-delete' plant.id%}" class="btn danger">Delete</a>
         </div>

@@ -11,9 +11,12 @@ class CareForm(forms.ModelForm):
             'date': forms.DateInput(
                 format=('%Y-%m-%d'),
                 attrs={
+                    'class': 'form-input', 
                     'placeholder': 'Select a date',
                     'type': 'date', 
                     'value': date.today()
                 }
             ),
+            'care_type': forms.Select(attrs={'class': 'form-input'}),
+            'time_of_day': forms.Select(attrs={'class': 'form-input'}), 
         }
