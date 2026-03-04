@@ -20,13 +20,10 @@
         <h3>{{ plant.notes }}</h3>  
 
         <div class="action-links">
-            <a href="{% url 'plant-update' plant.id%}" class="btn warn">Edit</a>
-            <a href="{% url 'plant-delete' plant.id%}" class="btn danger">Delete</a>
+            <a href="{% url 'plant-update' plant.id%}" class="btn-minimal">Edit</a>
+            <a href="{% url 'plant-delete' plant.id%}" class="btn-minimal">Delete</a>
         </div>
     </div>
 </section>
-
-<div class="cares-container">
     {% include 'plants_app/partials/plant_cares.html' %}
-</div>
 {% endblock %}

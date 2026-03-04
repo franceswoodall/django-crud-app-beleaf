@@ -1,14 +1,8 @@
-.content-area {
-    align-items: center; 
-    justify-content: flex-start; 
-}
-
 .plant-container, 
 .cares-container {
     width: 100%; 
     max-width: 1000px; 
     margin: 2rem auto; 
-    align-self: center; 
     box-sizing: border-box;
 }
 
@@ -22,17 +16,8 @@
 .detail-image img {
     width: 100%; 
     height: auto; 
-    display: block; 
     border-radius: 2px;
     border: 0.5px solid rgba(129, 169, 105, 0.3); 
-}
-
-.plant-details {
-    width: 100%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
 }
 
 .plant-details h1 {
@@ -47,21 +32,17 @@
     margin: 2rem 0; 
 }
 
-/* --- Cares -- */
-
 .cares-container {
-    width: 100%; 
-    max-width: 800px;       
-    margin: 4rem auto;   
+    max-width: 800px;      
     padding: 4rem;          
     border: 1px solid rgba(240, 244, 239, 0.2); 
     border-radius: 2px; 
-    background-color: transparent; 
     display: flex;
     flex-direction: column;
     align-items: center; 
     text-align: center;
 }
+
 .cares-container h2 {
     font-size: 1.8rem; 
     margin-bottom: 2rem;
@@ -73,29 +54,18 @@
     max-width: 500px; 
 }
 
-.cares-container form p, 
-.cares-container .form-group {
+.cares-container form p {
     margin-bottom: 1.5rem; 
-    display: flex;
-    flex-direction: column;
 }
 
 .cares-container input, 
-.cares-container textarea, 
 .cares-container select {
     width: 100%;
     padding: 0.8rem; 
-    margin-top: 0.5rem; 
-    border-radius: 2px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(240, 244, 239, 0.2);
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(240, 244, 239, 0.1);
     color: #f0f4ef;
-    font-family: inherit;
     text-align: center;
-}
-
-.cares-container div {
-    width: 100%; 
 }
 
 .table-wrapper {
@@ -106,13 +76,10 @@
 table {
     width: 100%; 
     border-collapse: collapse; 
-    margin: 0 auto; 
 }
-
 
 th {
     padding: 1rem;
-    text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
     border-bottom: 1px solid rgba(129, 169, 105, 0.3);
@@ -123,14 +90,4 @@ td {
     padding: 1.2rem 1rem;
     border-bottom: 1px solid rgba(240, 244, 239, 0.05);
     font-weight: 300;
-}
-
-.action-links {
-    display: flex; 
-    gap: 1rem;
-}
-
-.btn-minimal.danger {
-    color: #ff6b6b;
-    border-color: rgba(225, 107, 107, 0.4);
 }

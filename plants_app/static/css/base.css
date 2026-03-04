@@ -53,6 +53,13 @@ body {
   color: #f0f4ef;
 }
 
+.logo-emoji {
+  font-size: 4rem; 
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .content-area {
   flex: 1;
   display: flex;
