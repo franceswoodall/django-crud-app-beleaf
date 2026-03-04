@@ -9,14 +9,14 @@
     {% block head %}
     {% endblock %}
 </head>
-<body>
-    <header>
+<body class="main-wrap">
+    <header class="main-header">
         <div class="header-logo-container">
             <a href="/">
                 <img src="{% static 'images/logo.jpeg' %}" alt="Beleaf Logo" />
             </a>
         </div>
-        <nav>
+        <nav class="main-nav">
             <ul>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'plant-list' %}">All Plants</a></li>
@@ -35,9 +35,15 @@
             </ul>
         </nav>
     </header>
-    <main>
+
+    <main class="content-area">
         {% block content %}
         {% endblock %}
     </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+        </div>
+    </footer>
 </body>
 </html>

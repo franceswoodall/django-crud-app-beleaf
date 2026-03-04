@@ -1,18 +1,33 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
 {% block content %}
-<h1>Welcome to BeLeaf</h1>
-{% if not user.is_authenticated %}
-<section>
-    <form action="{% url 'home' %}" method="post" class="login">
-        <h1>Login</h1>
-        {% csrf_token %} {{ form.as_p }}
-        <input type="hidden" name="next" value="{{ next }}" />
-        <button type="submit" class="btn submit">Login</button>
-    </form>
-</section>
-{% endif %}
-<hr />
-<p class="page-content">
-    This app is to help you keep your plants alive! 
-</p>
+<div class="home-wrapper">
+    <div class="home-text">
+        <h1>Welcome to BeLeaf</h1>
+        <p class="tagline">This app is to help you keep your plants alive! </p>
+    </div>
+</div>
+
+    {% if not user.is_authenticated %}
+    <section class="login-container">
+        <form action="{% url 'home' %}" method="post" class="login">
+            <h2>Login</h2>
+            {% csrf_token %} 
+            <div class="form-fields"></div>
+                {{ form.as_p }}
+            </div>
+            <input type="hidden" name="next" value="{{ next }}" />
+            <button type="submit" class="btn submit">Login</button>
+        </form> 
+    </section>
+    {% endif %}
+
+    <hr class="styled-hr"/>
+    <p class="page-content">
+        This app is to help you keep your plants alive! 
+    </p>
+</div>
 {% endblock %}

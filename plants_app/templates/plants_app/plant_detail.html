@@ -6,10 +6,10 @@
         {% if plant.image_url %}
             <img src="{{ plant.image_url }}" alt="{{ plant.name }}" class="plant-user-image">
         {% else %}
-            <img src="{% static 'images/default-plant.png %}" alt="generic plant placeholder" class="plant-user-image">
+            <img src="{% static 'images/default-plant.png' %}" alt="generic plant placeholder" class="plant-user-image">
         {% endif %}
     </div>
-    
+
     <div class="plant-details">
         <h1>{{ plant.name }}</h1>
         <h2>{{ plant.get_size_display }}</h2>

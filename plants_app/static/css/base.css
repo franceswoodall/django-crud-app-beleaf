@@ -1,8 +1,60 @@
-html {
-  box-sizing: border box; 
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+  box-sizing: border-box;
 }
+
 
 body {
-  background-color: #40916C;
+  background-color: #314528;
+  color: #f0f4ef;
+  font-family: 'Figtree', sans-serif;
+  border: 35px solid #81a969;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  cursor: pointer; 
 }
 
+
+.main-header {
+  background-color: #314528;
+  border-bottom: 1px solid rgba(129, 169, 105, 0.3); 
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px; 
+  margin: 0; 
+  padding: 0; 
+  align-items: center
+}
+
+.main-nav li {
+  display: inline; 
+}
+
+.main-nav a, 
+#logout-form button {
+  color: #81a969;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.content-area {
+  flex: 1;
+  padding: 40px;
+}
