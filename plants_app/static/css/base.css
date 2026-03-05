@@ -127,7 +127,9 @@ body {
   flex-direction: column; 
   align-items: center;
   text-align: center;
-  width: 100%
+  width: 100%; 
+  max-width: 800px;
+  margin: 2rem auto; 
 }
 
 .cares-container .plant-details h1, 
@@ -153,3 +155,11 @@ body {
   background: #314528;
   padding: 8px; 
 }
+
+.plant-link, 
+.plant-link:visited, .plant-link:hover {
+  color: #f0f4ef; 
+  text-decoration: none;
+  display: block; 
+}
+

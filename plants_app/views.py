@@ -17,6 +17,9 @@ class Home(LoginView):
 class PlantList(LoginRequiredMixin, ListView):
     model = Plant
 
+    def get_queryset(self):
+        return Plant.objects.filter(user=self.request.user)
+
 class PlantCreate(LoginRequiredMixin, CreateView):
     model = Plant
     fields = ['name', 'size', 'notes', 'categories', 'image_url'] 
@@ -27,6 +30,9 @@ class PlantCreate(LoginRequiredMixin, CreateView):
 
 class PlantDetail(LoginRequiredMixin, DetailView):
     model = Plant
+
+    def get_queryset(self):
+        return Plant.objects.filter(user=self.request.user)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -53,12 +59,22 @@ def add_care(request, pk):
 class CategoryList(LoginRequiredMixin, ListView): 
     model = Category
 
+    def get_queryset(self):
+        return Category.objects.filter(user=self.request.user)
+
 class CategoryCreate(LoginRequiredMixin, CreateView): 
     model = Category 
     fields = ['name', 'description']
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 class CategoryDetail(LoginRequiredMixin, DetailView):
     model = Category
+
+    def get_queryset(self):
+        return Category.objects.filter(user=self.request.user)
 
 class CategoryUpdate(LoginRequiredMixin, UpdateView): 
     model = Category
