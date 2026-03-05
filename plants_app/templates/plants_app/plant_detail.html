@@ -6,7 +6,7 @@
         {% if plant.image_url %}
             <img src="{{ plant.image_url }}" alt="{{ plant.name }}">
         {% else %}
-            <img src="{% static 'images/default-plant.png' %}" alt="generic plant placeholder">
+            <img src="{% static 'images/default-plant.jpg' %}" alt="generic plant placeholder">
         {% endif %}
         </div>
 
@@ -20,8 +20,8 @@
         <h3>{{ plant.notes }}</h3>  
 
         <div class="action-links">
-            <a href="{% url 'plant-update' plant.id%}" class="btn-minimal">Edit</a>
-            <a href="{% url 'plant-delete' plant.id%}" class="btn-minimal">Delete</a>
+            <a href="{% url 'plant-update' plant.id%}" class="btn-minimal warn">Edit</a>
+            <a href="{% url 'plant-delete' plant.id%}" class="btn-minimal danger">Delete</a>
         </div>
     </div>
 </section>
