@@ -1,20 +1,28 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
 {% endblock %} 
+
+
 {% block content %}
-<div class="page-header">
-  <h1>Sign Up</h1>
-  <img src="" alt="" />
-</div>
-{% if error_message %}
-  <p class="red-text">{{ error_message }}</p>
-{% endif %}
-<form action="" method="post" class="form-container" autocomplete="off">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
-  <button type="submit" class="btn submit">Submit!</button>
+<div class="home-wrapper">
+  <div class="home-text">
+    <h1>Join BeLeaf!</h1>
+  </div>
+
+  <section class="login-card">
+    <form action="{% url 'signup '%}" method="post" class="login" autocomplete="off">
+      <h2>Create Account</h2>
+      {% csrf_token %}
+
+      {% if error_message %}
+        <p class="red-text">{{ error_message }}</p>
+      {% endif %}
+
+      <div class="form-fields">
+        {{ form.as_p }}
+      </div>
+  
+  <button type="submit" class="submit-btn">Sign Up</button>
 </form>
 
 {% endblock %}
