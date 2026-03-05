@@ -98,3 +98,35 @@ body {
   background: #ffffff;
   color: #314528; 
 }
+
+.cares-container, .plant-details {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  width: 100%
+}
+
+.cares-container .plant-details h1, 
+.cares-container, .plant-details h3 {
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+}
+
+.cares-container .action-links {
+  justify-content: center;
+  width: 100%; 
+}
+
+.cares-container select[multiple] {
+  height: auto; 
+  min-height: 120px; 
+  padding: 0.5rem; 
+  text-align: left;
+}
+
+.cares-container select option {
+  background: #314528;
+  padding: 8px; 
+}

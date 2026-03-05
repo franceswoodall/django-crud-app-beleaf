@@ -4,9 +4,10 @@
   <h1>Category Detail Page</h1>
 
   <div class="plant-details">
-    <p>{{ category.get_name_display }}</p>
+    <p class="tagline">{{ category.get_name_display }}</p>
     <h2>{{ category.name }}</h2>
-    <h2>{{ category.description }}</h2>
+    <p>{{ category.description }}</p>
+  </div>
 </section>
 
 <section class="cares-container">
@@ -26,8 +27,6 @@
       <a href="{% url 'category-update' category.id%}" class="btn-minimal warn">Edit</a>
       <a href="{% url 'category-delete' category.id%}" class="btn-minimal danger">Delete</a>
     </div>
-
-  </div>
 </section>
 
 {% endblock %}
