@@ -1,16 +1,18 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
-<link rel="stylesheet" href="" />
+{% extends 'base.html' %} {% load static %} 
 
-<div class="page-header">
-    <h1>Delete Category</h1>
-</div>
+{% block content %}
+<section class="cares-container confirm-delete">
+    <div class="delete-info">
+        <h2>Are you sure you want to delete {{category.name}} ?</h2>
+    </div>
 
-<h2>Are you sure you want to delete {{category.name}} ?</h2>
-
-<form action="" method="post" class="form">
-    {% csrf_token %}
-    <a href="{% url 'category-detail' category.id %}" class="btn secondary">Cancel</a>
-    <button type="submit" class="btn danger">Yes</button>
-</form>
+    <form action="" method="post" class="care-form-container">
+        {% csrf_token %}
+        <div class="action-links">
+            <a href="{% url 'category-detail' category.id %}" class="btn-minimal warn">Cancel</a>
+            <button type="submit" class="submit-btn danger">Yes</button>
+        </div>
+    </form>
+</section>
 
 {% endblock %}
