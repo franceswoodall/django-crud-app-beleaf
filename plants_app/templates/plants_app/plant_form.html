@@ -41,7 +41,10 @@
             </div>
         </div>
 
-        <button type="submit" class="submit-btn">Save Plant</button>
+        <div class="action-links">
+            <button type="submit" class="submit-btn">Save Plant</button>
+            <a href="{% url 'plant-list' %}" class="btn-minimal warn">Cancel</a>
+        </div>
     </form>
 </div>
 
