@@ -23,8 +23,13 @@
 
 .login-container {
     width: 100%;
-    max-width: 320px; 
+    max-width: 500px; 
     margin: 0 auto;
+}
+
+.login-card {
+    width: 100%; 
+    max-width: 500px;
 }
 
 .login-card h2 {

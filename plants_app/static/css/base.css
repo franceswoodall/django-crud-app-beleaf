@@ -36,10 +36,10 @@ body {
   display: flex;
   list-style: none;
   gap: 30px;
+  align-items: center;
 }
 
-.main-nav a, 
-#logout-form button {
+.main-nav a {
   color: #81a969; 
   text-decoration: none;
   font-size: 1.6rem;
@@ -51,6 +51,13 @@ body {
 
 .main-nav a:hover {
   color: #f0f4ef;
+}
+
+.main-nav {
+  width: auto; 
+  margin-top: 0; 
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
 }
 
 .logo-emoji {
@@ -97,6 +104,22 @@ body {
 .btn-minimal:hover {
   background: #ffffff;
   color: #314528; 
+}
+
+.logout-btn {
+  background: none;
+  border: none; 
+  padding: 0; 
+  margin: 0;
+  color: #81a969; 
+  font-size: 1.6rem; 
+  font-weight: 400;
+  display: inline-block;
+}
+
+.logout-btn:hover {
+  color: #f0f4ef; 
+  background: transparent;
 }
 
 .cares-container, .plant-details {
