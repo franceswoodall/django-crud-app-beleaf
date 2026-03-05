@@ -36,6 +36,8 @@
 }
 
 .form-fields p {
+    display: flex; 
+    flex-direction: column;
     text-align: left;
     font-size: 1.1rem;
     color: #f0f4ef;
@@ -74,3 +76,11 @@
     color: #314528;
     border-color: #f0f4ef;
 }
+
+.form-fields label {
+    display: block; 
+    text-align: center;
+    width: 100%; 
+    margin-bottom: 0.5rem; 
+}
+
