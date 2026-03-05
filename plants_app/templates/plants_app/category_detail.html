@@ -2,18 +2,11 @@
 
 <section class="cares-container">
   <h1>Category Detail Page</h1>
-</section>
 
   <div class="plant-details">
     <p>{{ category.get_name_display }}</p>
     <h2>{{ category.name }}</h2>
     <h2>{{ category.description }}</h2>
-
-    <div class="action-links">
-      <a href="{% url 'category-update' category.id%}" class="btn-minimal warn">Edit</a>
-      <a href="{% url 'category-delete' category.id%}" class="btn-minimal danger">Delete</a>
-    </div>
-  </div>
 </section>
 
 <section class="cares-container">
@@ -28,6 +21,13 @@
         <p class="empty-msg">No plants in this category yet!</p>
     {% endfor %}
     </div>
+
+    <div class="action-links">
+      <a href="{% url 'category-update' category.id%}" class="btn-minimal warn">Edit</a>
+      <a href="{% url 'category-delete' category.id%}" class="btn-minimal danger">Delete</a>
+    </div>
+
+  </div>
 </section>
 
 {% endblock %}
