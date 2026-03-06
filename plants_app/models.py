@@ -43,7 +43,7 @@ class Plant(models.Model):
         default = SIZES[0][0], 
     )
     notes = models.TextField(blank=True, default='')
-    categories = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(Category, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     image_url = models.URLField(
         'Plant Image URL', 
