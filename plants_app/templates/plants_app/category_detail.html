@@ -24,6 +24,7 @@
     </div>
 
     <div class="action-links">
+      <a href="{% url 'category-create'%}" class="btn-minimal warn">Add another category</a>
       <a href="{% url 'category-update' category.id%}" class="btn-minimal warn">Edit</a>
       <a href="{% url 'category-delete' category.id%}" class="btn-minimal danger">Delete</a>
     </div>
