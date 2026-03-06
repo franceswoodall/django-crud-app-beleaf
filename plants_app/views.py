@@ -23,11 +23,16 @@ class PlantList(LoginRequiredMixin, ListView):
 class PlantCreate(LoginRequiredMixin, CreateView):
     model = Plant
     fields = ['name', 'size', 'notes', 'categories', 'image_url'] 
+     
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['categories'].queryset = Category.objects.filter(user=self.request.user)
+        return form 
     
     def form_valid(self, form):
         form.instance.user = self.request.user 
         return super().form_valid(form)
-
+    
 class PlantDetail(LoginRequiredMixin, DetailView):
     model = Plant
 
@@ -42,6 +47,11 @@ class PlantDetail(LoginRequiredMixin, DetailView):
 class PlantUpdate(LoginRequiredMixin, UpdateView):
     model = Plant
     fields = ['name', 'size', 'notes', 'categories', 'image_url'] 
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['categories'].queryset = Category.objects.filter(user=self.request.user)
+        return form
 
 class PlantDelete(LoginRequiredMixin, DeleteView):
     model = Plant
