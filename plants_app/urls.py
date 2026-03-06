@@ -1,5 +1,4 @@
 from django.urls import path, include 
-from django.contrib import admin
 from .import views 
 
 urlpatterns = [
@@ -16,8 +15,6 @@ urlpatterns = [
     path('categories/create/', views.CategoryCreate.as_view(), name='category-create'), 
     path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='category-detail'), 
     path('categories/<int:pk>/edit/', views.CategoryUpdate.as_view(), name='category-update'),
-    path('categories/<int:pk>/delete/', views.CategoryDelete.as_view(), name='category-delete'), 
-    path('admin/', admin.site.urls), 
-    path('accounts/', include('django.contrib.auth.urls')), 
+    path('categories/<int:pk>/delete/', views.CategoryDelete.as_view(), name='category-delete'),  
     path('accounts/signup/', views.signup, name='signup'), 
 ]
