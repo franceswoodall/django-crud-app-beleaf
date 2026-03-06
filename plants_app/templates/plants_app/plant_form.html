@@ -43,8 +43,13 @@
 
         <div class="action-links">
             <button type="submit" class="submit-btn">Save</button>
-            <a href="{% url 'plant-detail' plant.id %}" class="btn-minimal warn">Cancel</a>
-        </div>
+
+            {% if plant.id %}
+                <a href="{% url 'plant-detail' plant.id %}" class="btn-minimal warn">Cancel</a>
+            {% else %}
+                <a href="{% url 'home' %}" class="btn-minimal warn">Cancel</a>
+            {% endif %}
+            </div>
     </form>
 </div>
 
